@@ -76,10 +76,8 @@ def scrape():
     #turn into html
     planet_html_table = np_df.to_html()
     clean_pht = planet_html_table.replace('\n', '')
-    clean_one_pht = clean_pht.replace(' style="text-align: right;"','')
-    clean_two_pht = clean_one_pht.replace('border="1"','')
-    clean_three_pht = clean_two_pht.replace('  class="dataframe"','')
-    clean_three_pht
+    clean_one_pht = clean_pht.replace("'",'')
+    clean_one_pht
 
     ### Mars Hemispheres
     items = []
@@ -118,7 +116,7 @@ def scrape():
         astro_data.append(info)
 
     planet_data = {
-    "table":clean_three_pht,
+    "table":clean_one_pht,
     "tweet":tweet,
     "feat_img":pic_full_url,
     "curr_title":curr_title,
