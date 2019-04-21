@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MARS BABY</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="container-fluid">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Hack Mars Sites</a></p>
+    </div>
+
+    <div class="row col-md-12">
+      <h2>Latest Mars news:</h2>
+    </div>
+    <div class="row col-md-12">
+      <p><strong>{{ planetize.curr_title }}</strong></p>
+    </div>
+    <div class="row col-md-12">
+      <p>Synopsis: {{ planetize.curr_synopsis }}</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <h2>Features Mars Image</h2>
+        <img src="{{ planetize.feat_img }}" alt="Planet" width=100%>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card">
+              <div class="card-body">
+                <h3>Current Weather on Mars</h3>
+                  <p>{{planetize.tweet}}</p>
+              </div>
+          </div>
+
+          <div class="card">
+              <div class="card-body">
+                <h3>Mars Facts</h3>
+                  <p>{{planetize.table}}</p>
+              </div>
+          </div>
+
+
+      </div>
+    </div>
+
+    <div class="row">
+      <h2>Mars Hemispheres</h2>
+      <hr><hr>
+
+      <div class="row">
+        
+          <div class ="col-md-6">
+              <div class="card">
+                  <div class="card-body">
+                    <img src="{{ planetize.astro_data[0].img_url }}" alt="astrodata1" width=100%>
+                    <h2>{{ planetize.astro_data[0].title }}</h2>
+                  </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                      <img src="{{ planetize.astro_data[2].img_url }}" alt="astrodata2" width=100%>
+                      <h2>{{ planetize.astro_data[2].title }}</h2>
+                    </div>
+                  </div>
+            </div>
+    
+            <div class ="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                      <img src="{{ planetize.astro_data[1].img_url }}" alt="astrodata3" width=100%>
+                      <h2>{{ planetize.astro_data[1].title }}</h2>
+                    </div>
+                  </div>
+
+                <div class="card">
+                    <div class="card-body">
+                      <img src="{{ planetize.astro_data[3].img_url }}" alt="astrodata4" width=100%>
+                      <h2>{{ planetize.astro_data[3].title }}</h2>
+                    </div>
+                  </div>
+            </div>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
